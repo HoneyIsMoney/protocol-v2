@@ -58,7 +58,7 @@ export const setInitialMarketRatesInRatesOracleByHelper = async (
         lendingRateOracleInstance.address
       )
     );
-    console.log(`  - Setted Oracle Borrow Rates for: ${chunkedSymbols[chunkIndex].join(', ')}`);
+    console.log(`  - Set Oracle Borrow Rates for: ${chunkedSymbols[chunkIndex].join(', ')}`);
   }
   // Set back ownership
   await waitForTx(

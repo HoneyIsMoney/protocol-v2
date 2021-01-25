@@ -4,10 +4,10 @@ import { ConfigNames } from '../../helpers/configuration';
 import { printContracts } from '../../helpers/misc-utils';
 import { usingTenderly } from '../../helpers/tenderly-utils';
 
-task('aave:mainnet', 'Deploy development enviroment')
+task('agaave:mainnet', 'Deploy development enviroment')
   .addFlag('verify', 'Verify contracts at Etherscan')
   .setAction(async ({ verify }, DRE) => {
-    const POOL_NAME = ConfigNames.Aave;
+    const POOL_NAME = ConfigNames.Agaave;
     await DRE.run('set-DRE');
 
     // Prevent loss of gas verifying all the needed ENVs for Etherscan verification
@@ -34,10 +34,10 @@ task('aave:mainnet', 'Deploy development enviroment')
 
     if (verify) {
       printContracts();
-      console.log('4. Veryfing contracts');
+      console.log('4. Verifying contracts');
       await DRE.run('verify:general', { all: true, pool: POOL_NAME });
 
-      console.log('5. Veryfing aTokens and debtTokens');
+      console.log('5. Verifying aTokens and debtTokens');
       await DRE.run('verify:tokens', { pool: POOL_NAME });
     }
 

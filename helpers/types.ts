@@ -183,27 +183,12 @@ export interface iAssetCommon<T> {
   [key: string]: T;
 }
 export interface iAssetBase<T> {
+  AG: T;
+  HNY: T;
   WETH: T;
-  DAI: T;
-  TUSD: T;
-  USDC: T;
-  USDT: T;
-  SUSD: T;
-  AAVE: T;
-  BAT: T;
-  MKR: T;
-  LINK: T;
-  KNC: T;
+  WXDAI: T;
   WBTC: T;
-  MANA: T;
-  ZRX: T;
-  SNX: T;
-  BUSD: T;
-  YFI: T;
-  UNI: T;
   USD: T;
-  REN: T;
-  ENJ: T;
 }
 
 export type iAssetsWithoutETH<T> = Omit<iAssetBase<T>, 'ETH'>;
@@ -212,26 +197,11 @@ export type iAssetsWithoutUSD<T> = Omit<iAssetBase<T>, 'USD'>;
 
 export type iAavePoolAssets<T> = Pick<
   iAssetsWithoutUSD<T>,
-  | 'DAI'
-  | 'TUSD'
-  | 'USDC'
-  | 'USDT'
-  | 'SUSD'
-  | 'AAVE'
-  | 'BAT'
-  | 'MKR'
-  | 'LINK'
-  | 'KNC'
+  | 'AG'
+  | 'HNY'
+  | 'WXDAI'
   | 'WBTC'
-  | 'MANA'
-  | 'ZRX'
-  | 'SNX'
-  | 'BUSD'
   | 'WETH'
-  | 'YFI'
-  | 'UNI'
-  | 'REN'
-  | 'ENJ'
 >;
 
 export type iMultiPoolsAssets<T> = iAssetCommon<T> | iAavePoolAssets<T>;

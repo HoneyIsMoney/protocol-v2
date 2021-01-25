@@ -44,8 +44,11 @@ import {
   setInitialMarketRatesInRatesOracleByHelper,
 } from '../helpers/oracles-helpers';
 import { DRE, waitForTx } from '../helpers/misc-utils';
-import { initReservesByHelper, configureReservesByHelper } from '../helpers/init-helpers';
-import AaveConfig from '../markets/aave';
+import {
+  initReservesByHelper,
+  configureReservesByHelper,
+} from '../helpers/init-helpers';
+import AaveConfig from '../markets/agaave';
 import { ZERO_ADDRESS } from '../helpers/constants';
 import {
   getLendingPool,
@@ -145,26 +148,11 @@ const buildTestEnv = async (deployer: Signer, secondaryWallet: Signer) => {
   await setInitialAssetPricesInOracle(
     ALL_ASSETS_INITIAL_PRICES,
     {
+      AG: mockTokens.AG.address,
       WETH: mockTokens.WETH.address,
-      DAI: mockTokens.DAI.address,
-      TUSD: mockTokens.TUSD.address,
-      USDC: mockTokens.USDC.address,
-      USDT: mockTokens.USDT.address,
-      SUSD: mockTokens.SUSD.address,
-      AAVE: mockTokens.AAVE.address,
-      BAT: mockTokens.BAT.address,
-      MKR: mockTokens.MKR.address,
-      LINK: mockTokens.LINK.address,
-      KNC: mockTokens.KNC.address,
+      WXDAI: mockTokens.DAI.address,
+      HNY: mockTokens.HNY.address,
       WBTC: mockTokens.WBTC.address,
-      MANA: mockTokens.MANA.address,
-      ZRX: mockTokens.ZRX.address,
-      SNX: mockTokens.SNX.address,
-      BUSD: mockTokens.BUSD.address,
-      YFI: mockTokens.BUSD.address,
-      REN: mockTokens.REN.address,
-      UNI: mockTokens.UNI.address,
-      ENJ: mockTokens.ENJ.address,
       USD: USD_ADDRESS,
     },
     fallbackOracle
@@ -215,7 +203,7 @@ const buildTestEnv = async (deployer: Signer, secondaryWallet: Signer) => {
 
   console.log('Initialize configuration');
 
-  const config = loadPoolConfig(ConfigNames.Aave);
+  const config = loadPoolConfig(ConfigNames.Agaave);
 
   const treasuryAddress = await getTreasuryAddress(config);
 
