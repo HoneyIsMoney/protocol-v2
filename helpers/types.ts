@@ -7,6 +7,7 @@ export interface SymbolMap<T> {
 export enum eEthereumNetwork {
   buidlerevm = 'buidlerevm',
   kovan = 'kovan',
+  rinkeby = 'rinkeby',
   ropsten = 'ropsten',
   main = 'main',
   coverage = 'coverage',
@@ -16,6 +17,7 @@ export enum eEthereumNetwork {
 
 export enum EthereumNetworkNames {
   kovan = 'kovan',
+  rinkeby = 'rinkeby',
   ropsten = 'ropsten',
   main = 'main',
 }
@@ -264,6 +266,7 @@ export interface iParamsPerNetwork<T> {
   [eEthereumNetwork.coverage]: T;
   [eEthereumNetwork.buidlerevm]: T;
   [eEthereumNetwork.kovan]: T;
+  [eEthereumNetwork.rinkeby]: T;
   [eEthereumNetwork.ropsten]: T;
   [eEthereumNetwork.main]: T;
   [eEthereumNetwork.hardhat]: T;
@@ -291,6 +294,7 @@ export interface ObjectString {
 
 export enum EthereumNetwork {
   kovan = 'kovan',
+  rinkeby = 'rinkeby',
   ropsten = 'ropsten',
   development = 'development',
   main = 'main',

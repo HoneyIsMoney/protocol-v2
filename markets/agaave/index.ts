@@ -50,6 +50,13 @@ export const AaveConfig: IAaveConfiguration = {
       WETH: '0xd0a1e359811322d97991e03f863a0c30c2cf029c',
       HNY: '0xe92b757a05ca29221ef04333ee5f7dc38a2e408b'
     },
+    [EthereumNetwork.rinkeby]: {
+      AG: '0xaE88624C894668E1bBABc9AFE87E8CA0fb74eC2a',
+      WXDAI: '0x569aaff8f90a5e48b27c154249ee5a08ed0c44e2',
+      WBTC: '0x64ed1291fe07ade7bb261c7aa8491e4bc0e8de1c',
+      WETH: '0xc778417e063141139fce010982780140aa0cd5ab',
+      HNY: '0xa30CCf67b489d627De8F8c035F5b9676442646e0'
+    },
     [EthereumNetwork.ropsten]: {
       AAVE: '',
       BAT: '0x85B24b3517E3aC7bf72a14516160541A60cFF19d',

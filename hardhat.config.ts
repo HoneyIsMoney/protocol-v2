@@ -101,6 +101,7 @@ const buidlerConfig: HardhatUserConfig = {
       chainId: COVERAGE_CHAINID,
     },
     kovan: getCommonNetworkConfig(eEthereumNetwork.kovan, 42),
+    rinkeby: getCommonNetworkConfig(eEthereumNetwork.rinkeby, 4),
     ropsten: getCommonNetworkConfig(eEthereumNetwork.ropsten, 3),
     main: getCommonNetworkConfig(eEthereumNetwork.main, 1),
     tenderlyMain: getCommonNetworkConfig(eEthereumNetwork.main, 1),
