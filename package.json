@@ -47,6 +47,8 @@
     "agaave:fork:main": "npm run compile && MAINNET_FORK=true  hardhat agaave:mainnet",
     "agaave:main:full:migration": "npm run compile && npm run hardhat:main -- agaave:mainnet --verify",
     "agaave:main:full:initialize": "npm run compile && MAINNET_FORK=true full:initialize-tokens --pool Agaave",
+    "agaave:deployUniswapRepayAdapter": "hardhat --network rinkeby deploy-UniswapRepayAdapter --provider 0x7D716cA020b551f17531b1F793Ff58409f13F449 --router 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D --weth 0xDf032Bc4B9dC2782Bb09352007D4C57B75160B15",
+    "agaave:UniswapLiquiditySwapAdapter": "hardhat --network rinkeby deploy-UniswapLiquiditySwapAdapter --provider 0x7D716cA020b551f17531b1F793Ff58409f13F449 --router 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D --weth 0xDf032Bc4B9dC2782Bb09352007D4C57B75160B15",
     "prettier:check": "npx prettier -c 'tasks/**/*.ts' 'contracts/**/*.sol' 'helpers/**/*.ts'  'test/**/*.ts'",
     "prettier:write": "prettier --write 'tasks/**/*.ts' 'contracts/**/*.sol' 'helpers/**/*.ts'  'test/**/*.ts'",
     "ci:test": "npm run compile && npm run test",

@@ -7,8 +7,8 @@ import {
   eEthereumNetwork,
 } from './types';
 import { getParamPerPool } from './contracts-helpers';
-import AgaaveConfig from '../markets/agaave';
-import { CommonsConfig } from '../markets/agaave/commons';
+import AgaaveConfig from '../markets/agave';
+import { CommonsConfig } from '../markets/agave/commons';
 import { DRE, filterMapBy } from './misc-utils';
 import { tEthereumAddress } from './types';
 import { getParamPerNetwork } from './contracts-helpers';
