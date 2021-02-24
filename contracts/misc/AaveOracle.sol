@@ -82,15 +82,27 @@ contract AaveOracle is IPriceOracleGetter, Ownable {
   /// @param asset The asset address
   function getAssetPrice(address asset) public view override returns (uint256) {
     IChainlinkAggregator source = assetsSources[asset];
+    IChainlinkAggregator wethUsdSource = assetsSources[WETH];
 
     if (asset == WETH) {
       return 1 ether;
-    } else if (address(source) == address(0)) {
+    } else if (address(source) == address(0) || address(wethUsdSource) == address(0)) {
       return _fallbackOracle.getAssetPrice(asset);
     } else {
+      // XDAI: On xDai our native token (and thus, the wrapped version of it) is valued like DAI.
+      // Further, Chainlink aggregators on xdai are USD pairs.
+      // So, we need to first get the value of our native token in USD,
+      // so the values can make sense priced in terms of our native asset.
+      int256 wethUsdPrice = wethUsdSource.latestAnswer();
+      if (wethUsdPrice <= 0) {
+        return _fallbackOracle.getAssetPrice(asset);
+      }
+
       int256 price = IChainlinkAggregator(source).latestAnswer();
       if (price > 0) {
-        return uint256(price);
+        // Now we have the price in USD. Dividing by the DAI/USD price gets us the value in our native token.
+        // On mainnet, Aave and Chainlink price everything in ether, thus avoiding this double conversion.
+        return uint256(price / wethUsdPrice);
       } else {
         return _fallbackOracle.getAssetPrice(asset);
       }
