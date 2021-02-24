@@ -44,11 +44,8 @@ import {
   setInitialMarketRatesInRatesOracleByHelper,
 } from '../helpers/oracles-helpers';
 import { DRE, waitForTx } from '../helpers/misc-utils';
-import {
-  initReservesByHelper,
-  configureReservesByHelper,
-} from '../helpers/init-helpers';
-import AaveConfig from '../markets/agaave';
+import { initReservesByHelper, configureReservesByHelper } from '../helpers/init-helpers';
+import AaveConfig from '../markets/agave';
 import { ZERO_ADDRESS } from '../helpers/constants';
 import {
   getLendingPool,

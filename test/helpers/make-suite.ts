@@ -36,7 +36,7 @@ import { getParamPerNetwork } from '../../helpers/contracts-helpers';
 import { WETH9Mocked } from '../../types/WETH9Mocked';
 import { WETHGateway } from '../../types/WETHGateway';
 import { solidity } from 'ethereum-waffle';
-import { AaveConfig } from '../../markets/agaave';
+import { AaveConfig } from '../../markets/agave';
 import { FlashLiquidationAdapter } from '../../types';
 import { HardhatRuntimeEnvironment } from 'hardhat/types';
 import { usingTenderly } from '../../helpers/tenderly-utils';

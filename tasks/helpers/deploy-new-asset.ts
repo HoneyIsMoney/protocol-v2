@@ -1,8 +1,8 @@
 import { task } from 'hardhat/config';
 import { EthereumNetwork } from '../../helpers/types';
 import { getTreasuryAddress } from '../../helpers/configuration';
-import * as marketConfigs from '../../markets/aave';
-import * as reserveConfigs from '../../markets/aave/reservesConfigs';
+import * as marketConfigs from '../../markets/agave';
+import * as reserveConfigs from '../../markets/agave/reservesConfigs';
 import { chooseATokenDeployment } from '../../helpers/init-helpers';
 import { getLendingPoolAddressesProvider } from './../../helpers/contracts-getters';
 import {

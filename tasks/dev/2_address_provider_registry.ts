@@ -4,7 +4,7 @@ import {
   deployLendingPoolAddressesProviderRegistry,
 } from '../../helpers/contracts-deployments';
 import { waitForTx } from '../../helpers/misc-utils';
-import { AaveConfig } from '../../markets/agaave';
+import { AaveConfig } from '../../markets/agave';
 
 task(
   'dev:deploy-address-provider',
